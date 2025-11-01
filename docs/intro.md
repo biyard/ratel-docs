@@ -2,6 +2,7 @@
 title: Welcome to Ratel Docs
 description: Start here
 sidebar_position: 1
+slug: /
 ---
 
 # Ratel Documentation

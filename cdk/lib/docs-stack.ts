@@ -13,10 +13,16 @@ import * as cf from "aws-cdk-lib/aws-cloudfront";
 import * as origins from "aws-cdk-lib/aws-cloudfront-origins";
 import * as iam from "aws-cdk-lib/aws-iam";
 import * as lambda from "aws-cdk-lib/aws-lambda";
+import { NodejsFunction } from "aws-cdk-lib/aws-lambda-nodejs";
 import * as apigw from "aws-cdk-lib/aws-apigateway";
+import * as s3deploy from "aws-cdk-lib/aws-s3-deployment";
+
+export interface DocsStackProps extends cdk.StackProps {
+  certificateArn: string;
+}
 
 export class DocsStack extends cdk.Stack {
-  constructor(scope: Construct, id: string, props?: cdk.StackProps) {
+  constructor(scope: Construct, id: string, props: DocsStackProps) {
     super(scope, id, props);
 
     const {
@@ -25,14 +31,23 @@ export class DocsStack extends cdk.Stack {
       ALLOWED_REDIRECT_ORIGIN,
       DOMAIN,
       BASE_DOMAIN,
-    } = process.env as Record<string, string | undefined>;
+      ENV,
+    } = process.env as Record<string, string>;
 
     const zone = route53.HostedZone.fromLookup(this, "RootZone", {
       domainName: BASE_DOMAIN,
     });
 
-    const cert = new acm.Certificate(this, "Cert", {
-      domainName: DOMAIN,
+    // Import the CloudFront certificate from us-east-1
+    const cert = acm.Certificate.fromCertificateArn(
+      this,
+      "CloudFrontCert",
+      props.certificateArn
+    );
+
+    const oauthDomain = `oauth.${DOMAIN}`;
+    const oauthCert = new acm.Certificate(this, "OAuthCert", {
+      domainName: oauthDomain,
       validation: acm.CertificateValidation.fromDns(zone),
     });
 
@@ -42,11 +57,41 @@ export class DocsStack extends cdk.Stack {
       encryption: s3.BucketEncryption.S3_MANAGED,
     });
 
+    // CloudFront function for SPA routing
+    const spaRoutingFunction = new cf.Function(this, "SpaRoutingFunction", {
+      code: cf.FunctionCode.fromInline(`
+function handler(event) {
+  var request = event.request;
+  var uri = request.uri;
+
+  // Check if URI already has an extension
+  if (!uri.includes('.')) {
+    // If URI is for /admin, redirect to /admin/index.html
+    if (uri === '/admin' || uri === '/admin/') {
+      request.uri = '/admin/index.html';
+    }
+    // For all other paths without extensions, append /index.html
+    else if (!uri.endsWith('/')) {
+      request.uri = uri + '/index.html';
+    } else {
+      request.uri = uri + 'index.html';
+    }
+  }
+
+  return request;
+}
+      `),
+    });
+
     // CloudFront Prod
     const prodDist = new cf.Distribution(this, "DocsProdDistribution", {
       defaultBehavior: {
         origin: new origins.S3Origin(prodBucket),
         viewerProtocolPolicy: cf.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
+        functionAssociations: [{
+          function: spaRoutingFunction,
+          eventType: cf.FunctionEventType.VIEWER_REQUEST,
+        }],
       },
       defaultRootObject: "index.html",
       domainNames: [DOMAIN],
@@ -67,10 +112,10 @@ export class DocsStack extends cdk.Stack {
     );
 
     // OAuth Lambda + API Gateway
-    const oauthFn = new lambda.Function(this, "GithubOAuthFn", {
+    const oauthFn = new NodejsFunction(this, "GithubOAuthFn", {
       runtime: lambda.Runtime.NODEJS_20_X,
-      handler: "github-oauth.handler",
-      code: lambda.Code.fromAsset("../lambda"),
+      entry: "../lambda/github-oauth.ts",
+      handler: "handler",
       environment: {
         GITHUB_CLIENT_ID,
         GITHUB_CLIENT_SECRET,
@@ -93,19 +138,49 @@ export class DocsStack extends cdk.Stack {
     oauth.addResource("callback").addMethod("GET");
     oauth.addResource("token").addMethod("GET");
 
+    // Custom domain for OAuth API
+    const oauthApiDomain = new apigw.DomainName(this, "OAuthApiDomain", {
+      domainName: oauthDomain,
+      certificate: oauthCert,
+      endpointType: apigw.EndpointType.REGIONAL,
+    });
+
+    new apigw.BasePathMapping(this, "OAuthApiMapping", {
+      domainName: oauthApiDomain,
+      restApi: api,
+    });
+
+    // DNS for OAuth API
+    new route53.ARecord(this, "OAuthApiAliasV4", {
+      zone,
+      recordName: oauthDomain.replace(`.${BASE_DOMAIN}`, ""),
+      target: route53.RecordTarget.fromAlias(
+        new targets.ApiGatewayDomain(oauthApiDomain)
+      ),
+    });
+
+    // DNS for docs site (CloudFront)
     new route53.ARecord(this, "AliasV4", {
       zone,
-      recordName: DOMAIN.replace(`.${BASE_DOMAIN}`, ""), // e.g., 'dev'
+      recordName: DOMAIN.replace(`.${BASE_DOMAIN}`, ""),
       target: route53.RecordTarget.fromAlias(
-        new targets.CloudFrontTarget(distribution),
+        new targets.CloudFrontTarget(prodDist),
       ),
     });
     new route53.AaaaRecord(this, "AliasV6", {
       zone,
-      recordName: DOMAIN.replace(`.${BASE_DOMAIN}`, ""), // e.g., 'dev'
+      recordName: DOMAIN.replace(`.${BASE_DOMAIN}`, ""),
       target: route53.RecordTarget.fromAlias(
-        new targets.CloudFrontTarget(distribution),
+        new targets.CloudFrontTarget(prodDist),
       ),
+    });
+
+    // Deploy built site to S3
+    new s3deploy.BucketDeployment(this, `RatelDocsBucketDeployment-${ENV}`, {
+      destinationBucket: prodBucket,
+      distribution: prodDist,
+      distributionPaths: ["/*"],
+      sources: [s3deploy.Source.asset("../build")],
     });
 
     new cdk.CfnOutput(this, "ProdBucketName", { value: prodBucket.bucketName });
@@ -113,5 +188,7 @@ export class DocsStack extends cdk.Stack {
       value: prodDist.distributionId,
     });
     new cdk.CfnOutput(this, "OAuthApiUrl", { value: api.url });
+    new cdk.CfnOutput(this, "OAuthDomain", { value: `https://${oauthDomain}` });
+    new cdk.CfnOutput(this, "SiteUrl", { value: `https://${DOMAIN}` });
   }
 }

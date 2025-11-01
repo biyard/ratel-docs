@@ -17,6 +17,7 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "esbuild": "^0.25.11",
     "markdownlint-cli": "^0.40.0",
     "typescript": "^5.6.3"
   }

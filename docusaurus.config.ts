@@ -3,11 +3,12 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 const config: Config = {
   title: 'Ratel Docs',
-  url: 'https://docs.example.com',
+  url: 'https://docs.ratel.foundation',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
   organizationName: 'ratel-foundation',
   projectName: 'ratel-docs',
+  onBrokenLinks: 'warn',
   i18n: { defaultLocale: 'en', locales: ['en', 'ko'] },
   presets: [
     [
@@ -29,7 +30,7 @@ const config: Config = {
     navbar: {
       title: 'Ratel Docs',
       items: [
-        { href: '/admin', label: 'Admin', position: 'right' },
+        { href: '/admin/', label: 'Admin', position: 'right' },
         { href: 'https://github.com/ratel-foundation/ratel-docs', label: 'GitHub', position: 'right' }
       ]
     },
