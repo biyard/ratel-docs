@@ -26,6 +26,7 @@ jobs:
           ENV: dev
           DOMAIN: docs.dev.ratel.foundation
         run: |
+          npm i -g aws-cdk
           make deploy
 
 
