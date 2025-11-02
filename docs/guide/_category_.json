@@ -1,0 +1,10 @@
+{
+  "label": "guide",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "title": "Guide",
+    "description": "Learn how to use Ratel Docs"
+  },
+  "collapsed": false
+}

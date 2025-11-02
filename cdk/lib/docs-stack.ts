@@ -50,30 +50,28 @@ export class DocsStack extends cdk.Stack {
     });
 
     // CloudFront function for SPA routing
-    const spaRoutingFunction = new cf.Function(this, "SpaRoutingFunction", {
-      code: cf.FunctionCode.fromInline(`
-function handler(event) {
-  var request = event.request;
-  var uri = request.uri;
+    const spaRoutingFunction = new cf.Function(
+      this,
+      `SpaRoutingFunction-${ENV}`,
+      {
+        code: cf.FunctionCode.fromInline(`
+    function handler(event) {
+      var request = event.request;
+      var uri = request.uri;
 
-  // Check if URI already has an extension
-  if (!uri.includes('.')) {
-    // If URI is for /admin, redirect to /admin/index.html
-    if (uri === '/admin' || uri === '/admin/') {
-      request.uri = '/admin/index.html';
-    }
-    // For all other paths without extensions, append /index.html
-    else if (!uri.endsWith('/')) {
-      request.uri = uri + '/index.html';
-    } else {
-      request.uri = uri + 'index.html';
-    }
-  }
+      if (!uri.endsWith('/index.html') {
+        if (!uri.endsWith('/')) {
+          request.uri = uri + '/index.html';
+        } else {
+          request.uri = uri + 'index.html';
+        }
+      }
 
-  return request;
-}
-      `),
-    });
+      return request;
+    }
+          `),
+      },
+    );
 
     const prodDist = new cf.Distribution(this, "Distribution", {
       defaultBehavior: {
