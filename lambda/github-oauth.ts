@@ -24,8 +24,8 @@ export const handler = async (event: any) => {
 
   if (path.endsWith('/oauth/authorize')) {
     // Decap expects {auth_url} to redirect
-    const proto = event.headers['x-forwarded-proto'] || 'https';
-    const host = event.headers['host'];
+    const proto = event.headers['x-forwarded-proto'] || event.headers['X-Forwarded-Proto'] || 'https';
+    const host = event.headers['host'] || event.headers['Host'] || event.requestContext?.domainName;
     const base = `${proto}://${host}`;
     const redirectUri = `${base}${path.replace('/oauth/authorize','')}/oauth/callback`;
     const url = `https://github.com/login/oauth/authorize?client_id=${GITHUB_CLIENT_ID}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=repo`;

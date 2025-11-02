@@ -8,3 +8,4 @@ cdk/cdk.out
 /cdk/cdk.context.json
 /cdk/cdk.json
 .docusaurus
+*.log
