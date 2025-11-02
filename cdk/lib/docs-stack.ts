@@ -1,6 +1,4 @@
 import {
-  Stack,
-  StackProps,
   aws_route53 as route53,
   aws_certificatemanager as acm,
 } from "aws-cdk-lib";
@@ -25,12 +23,12 @@ export class DocsStack extends cdk.Stack {
     });
 
     // Import the CloudFront certificate from us-east-1
-    const cert = new acm.Certificate(this, "CloudFrontCert", {
+    const cert = new acm.Certificate(this, "Cert", {
       domainName: DOMAIN,
       validation: acm.CertificateValidation.fromDns(zone),
     });
 
-    const bucket = new s3.Bucket(this, "NextStaticBucket", {
+    const bucket = new s3.Bucket(this, "Bucket", {
       removalPolicy: cdk.RemovalPolicy.DESTROY,
     });
 
@@ -41,11 +39,41 @@ export class DocsStack extends cdk.Stack {
       originAccessIdentity: oai,
     });
 
+    // CloudFront function for SPA routing
+    const spaRoutingFunction = new cf.Function(this, "SpaRoutingFunction", {
+      code: cf.FunctionCode.fromInline(`
+function handler(event) {
+  var request = event.request;
+  var uri = request.uri;
+
+  // Check if URI already has an extension
+  if (!uri.includes('.')) {
+    // If URI is for /admin, redirect to /admin/index.html
+    if (uri === '/admin' || uri === '/admin/') {
+      request.uri = '/admin/index.html';
+    }
+    // For all other paths without extensions, append /index.html
+    else if (!uri.endsWith('/')) {
+      request.uri = uri + '/index.html';
+    } else {
+      request.uri = uri + 'index.html';
+    }
+  }
+
+  return request;
+}
+      `),
+    });
+
     const prodDist = new cf.Distribution(this, "Distribution", {
       defaultBehavior: {
         origin,
         cachePolicy: cloudfront.CachePolicy.CACHING_OPTIMIZED,
         viewerProtocolPolicy: cf.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
+        functionAssociations: [{
+          function: spaRoutingFunction,
+          eventType: cf.FunctionEventType.VIEWER_REQUEST,
+        }],
       },
       defaultRootObject: "index.html",
       domainNames: [DOMAIN],
