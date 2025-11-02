@@ -2,8 +2,8 @@ backend:
   name: github
   repo: biyard/ratel-docs
   branch: dev
-  # base_url: https://docs.ratel.foundation
-  # auth_endpoint: /oauth/authorize
+  base_url: https://oauth.docs.ratel.foundation
+  auth_endpoint: /oauth/authorize
 
 publish_mode: editorial_workflow
 

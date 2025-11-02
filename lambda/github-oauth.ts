@@ -23,16 +23,25 @@ export const handler = async (event: any) => {
   const headers = corsHeaders(origin);
 
   if (path.endsWith('/oauth/authorize')) {
-    // Decap expects {auth_url} to redirect
+    // Build GitHub OAuth URL and redirect
     const proto = event.headers['x-forwarded-proto'] || event.headers['X-Forwarded-Proto'] || 'https';
     const host = event.headers['host'] || event.headers['Host'] || event.requestContext?.domainName;
     const base = `${proto}://${host}`;
     const redirectUri = `${base}${path.replace('/oauth/authorize','')}/oauth/callback`;
     const url = `https://github.com/login/oauth/authorize?client_id=${GITHUB_CLIENT_ID}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=repo`;
-    return json(200, { auth_url: url }, headers);
+
+    // Return HTTP 302 redirect
+    return {
+      statusCode: 302,
+      headers: {
+        ...headers,
+        'Location': url,
+      },
+      body: '',
+    };
   }
 
-  if (path.endsWith('/oauth/callback') || path.endsWith('/oauth/token')) {
+  if (path.endsWith('/oauth/callback')) {
     const code = qs.code;
     if (!code) return json(400, { error: 'missing_code' }, headers);
 
@@ -45,8 +54,60 @@ export const handler = async (event: any) => {
     const tokenJson = await tokenRes.json();
     if (!tokenJson.access_token) return json(400, { error: 'invalid_token', details: tokenJson }, headers);
 
-    // Decap expects {token: "<access_token>"} for /callback; and raw for /token is ok as well.
-    return json(200, path.endsWith('/oauth/token') ? tokenJson : { token: tokenJson.access_token }, headers);
+    // Return HTML that posts message to opener window (Decap CMS popup flow)
+    const tokenData = JSON.stringify({ token: tokenJson.access_token, provider: 'github' });
+    const html = `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Authorizing...</title>
+</head>
+<body>
+  <script>
+    (function() {
+      const tokenData = ${tokenData};
+      function receiveMessage(e) {
+        console.log("receiveMessage %o", e);
+        if (e.data === "authorizing:github") {
+          window.opener.postMessage(
+            'authorization:github:success:' + JSON.stringify(tokenData),
+            e.origin
+          );
+        }
+      }
+      window.addEventListener("message", receiveMessage, false);
+      window.opener.postMessage("authorizing:github", "*");
+    })();
+  </script>
+</body>
+</html>`;
+
+    return {
+      statusCode: 200,
+      headers: {
+        ...headers,
+        'Content-Type': 'text/html',
+      },
+      body: html,
+    };
+  }
+
+  if (path.endsWith('/oauth/token')) {
+    const code = qs.code;
+    if (!code) return json(400, { error: 'missing_code' }, headers);
+
+    const tokenRes = await fetch('https://github.com/login/oauth/access_token', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({ client_id: GITHUB_CLIENT_ID, client_secret: GITHUB_CLIENT_SECRET, code })
+    });
+
+    const tokenJson = await tokenRes.json();
+    if (!tokenJson.access_token) return json(400, { error: 'invalid_token', details: tokenJson }, headers);
+
+    // Return raw token JSON for server-to-server calls
+    return json(200, tokenJson, headers);
   }
 
   return json(404, { error: 'not_found' }, headers);

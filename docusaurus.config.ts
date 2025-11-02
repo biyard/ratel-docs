@@ -31,9 +31,10 @@ const config: Config = {
       title: "Ratel Docs",
       items: [
         {
-          type: 'html',
+          type: "html",
           position: "right",
-          value: '<a href="/admin/" class="navbar__item navbar__link">Admin</a>',
+          value:
+            '<a href="/admin/" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Admin</a>',
         },
         {
           href: "https://github.com/biyard/ratel-docs",
