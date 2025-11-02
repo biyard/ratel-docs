@@ -59,10 +59,21 @@ export class DocsStack extends cdk.Stack {
       var request = event.request;
       var uri = request.uri;
 
-      if (!uri.endsWith('/index.html') {
-        if (!uri.endsWith('/')) {
+      // Check if URI has a file extension
+      var hasFileExtension = /\\.[a-zA-Z0-9]+$/.test(uri);
+
+      // If no file extension, it's a page route - append index.html
+      if (!hasFileExtension) {
+        // Special handling for /admin route
+        if (uri === '/admin' || uri === '/admin/') {
+          request.uri = '/admin/index.html';
+        }
+        // For other routes without trailing slash, add /index.html
+        else if (!uri.endsWith('/')) {
           request.uri = uri + '/index.html';
-        } else {
+        }
+        // For routes with trailing slash, add index.html
+        else {
           request.uri = uri + 'index.html';
         }
       }
