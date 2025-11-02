@@ -1,0 +1,46 @@
+name: Dev Deploy
+on:
+  push:
+    branches: [ "dev" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Deploy
+        env:
+          ENV: dev
+          DOMAIN: docs.dev.ratel.foundation
+        run: |
+          make deploy
+
+
+  create-release-pr:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/dev'
+    needs: [deploy]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: recursive
+          ssh-key: ${{ secrets.PULL_KEY_REPO }}
+      - name: Git pr release action
+        uses: grassedge/git-pr-release-action@v1.0
+        with:
+          base: main
+          head: dev
+          token: ${{ secrets.GITHUB_TOKEN }}
