@@ -13,6 +13,7 @@ BUILD_ENVS ?= ENV=$(ENV) \
 								AWS_REGION=$(AWS_REGION)
 
 deploy:
+	npm i
 	npm run build
 	cd cdk && $(BUILD_ENVS) npm i
 	cd cdk && $(BUILD_ENVS) npm run build
