@@ -114,25 +114,23 @@ When the creator publishes the Space, an invitation email is automatically sent 
 
 ## 4. Participant — Participation in the Discussion
 
-* Read materials, post comments, reply, and vote.
-* Discussion is open for the designated period.
+1. Participants engage in the deliberation for a set period, writing comments, watching videos, and more.
 
 *(Screenshot: Space discussion interface)*
 
-## 5. Creator — Create Post-Survey
+## 5. Creator — Create Final-Survey
 
 1. Navigate to **Surveys**.
-2. Create and publish a **Post-Survey**.
-3. Notify participants to complete it.
+2. Create and publish a **Final-Survey**.
 
 *(Screenshot: Post-survey creation screen)*
 
-## 6. Participant — Complete Post-Survey
+## 6. Participant — Complete Final-Survey
 
-1. Click the post-survey link.
+1. Click the Final-survey.
 2. Complete and submit the survey within the given timeframe.
 
-*(Screenshot: Post-survey interface)*
+*(Screenshot: Final-survey interface)*
 
 ## 7. Creator — Review Survey Results
 
