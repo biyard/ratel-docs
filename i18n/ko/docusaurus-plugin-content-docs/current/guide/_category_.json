@@ -1,0 +1,10 @@
+{
+  "label": "가이드",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "title": "가이드",
+    "description": "Ratel Docs 사용 방법 알아보기"
+  },
+  "collapsed": false
+}

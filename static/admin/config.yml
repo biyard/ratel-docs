@@ -11,8 +11,34 @@ media_folder: "static/img/uploads"
 public_folder: "/img/uploads"
 
 collections:
-  - name: "docs"
-    label: "Docs (root)"
+  # === ENGLISH COLLECTIONS ===
+
+  # All documents - allows creating in any category
+  - name: "all_en"
+    label: "📚 All Docs (English)"
+    folder: "docs"
+    create: true
+    path: "{{category}}/{{slug}}"
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string", required: false }
+      - {
+          label: "Category (folder)",
+          name: "category",
+          widget: "select",
+          options: ["", "guide", "spaces"],
+          default: "",
+          hint: "Select folder: empty for root, 'guide' for Guide section, 'spaces' for Spaces section"
+        }
+      - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
+      - { label: "Slug (optional)", name: "slug", widget: "string", required: false, hint: "Auto-generated from title if left empty" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # Root-level docs only
+  - name: "docs_en"
+    label: "📄 Docs (English)"
     folder: "docs"
     create: true
     slug: "{{slug}}"
@@ -23,8 +49,9 @@ collections:
       - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
 
-  - name: "guide"
-    label: "Guides"
+  # Guide directory only
+  - name: "guide_en"
+    label: "📖 Guide (English)"
     folder: "docs/guide"
     create: true
     slug: "{{slug}}"
@@ -32,4 +59,160 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string", required: false }
+      - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
+
+  # Spaces directory only
+  - name: "spaces_en"
+    label: "🌐 Spaces (English)"
+    folder: "docs/spaces"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string", required: false }
+      - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # === KOREAN COLLECTIONS ===
+
+  # All documents - allows creating in any category
+  - name: "all_ko"
+    label: "📚 모든 문서 (한국어)"
+    folder: "i18n/ko/docusaurus-plugin-content-docs/current"
+    create: true
+    path: "{{category}}/{{slug}}"
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string", required: false }
+      - {
+          label: "Category (카테고리)",
+          name: "category",
+          widget: "select",
+          options: ["", "guide", "spaces"],
+          default: "",
+          hint: "폴더 선택: 비움은 루트, 'guide'는 가이드 섹션, 'spaces'는 스페이스 섹션"
+        }
+      - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
+      - { label: "Slug (optional)", name: "slug", widget: "string", required: false, hint: "제목에서 자동 생성됨 (비워두면)" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # Root-level docs only
+  - name: "docs_ko"
+    label: "📄 문서 (한국어)"
+    folder: "i18n/ko/docusaurus-plugin-content-docs/current"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string", required: false }
+      - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # Guide directory only
+  - name: "guide_ko"
+    label: "📖 가이드 (한국어)"
+    folder: "i18n/ko/docusaurus-plugin-content-docs/current/guide"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string", required: false }
+      - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # Spaces directory only
+  - name: "spaces_ko"
+    label: "🌐 스페이스 (한국어)"
+    folder: "i18n/ko/docusaurus-plugin-content-docs/current/spaces"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string", required: false }
+      - { label: "Sidebar Position", name: "sidebar_position", widget: "number", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # Category configurations (English)
+  - name: "categories_en"
+    label: "📁 Categories (English)"
+    folder: "docs"
+    create: true
+    path: "{{category}}/_category_"
+    extension: "json"
+    format: "json"
+    fields:
+      - {
+          label: "Category Path",
+          name: "category",
+          widget: "string",
+          hint: "Path to category folder (e.g., 'guide', 'api', 'guide/advanced')"
+        }
+      - { label: "Label", name: "label", widget: "string", hint: "Display name in sidebar" }
+      - { label: "Position", name: "position", widget: "number", required: false }
+      - {
+          label: "Link",
+          name: "link",
+          widget: "object",
+          required: false,
+          hint: "Optional: Make category clickable",
+          fields:
+            [
+              {
+                label: "Type",
+                name: "type",
+                widget: "select",
+                options: ["generated-index", "doc"],
+                default: "generated-index"
+              },
+              { label: "Title", name: "title", widget: "string", required: false },
+              { label: "Description", name: "description", widget: "text", required: false },
+              { label: "Slug", name: "slug", widget: "string", required: false }
+            ]
+        }
+      - { label: "Collapsed", name: "collapsed", widget: "boolean", default: true, required: false }
+
+  # Category configurations (Korean)
+  - name: "categories_ko"
+    label: "📁 Categories (한국어)"
+    folder: "i18n/ko/docusaurus-plugin-content-docs/current"
+    create: true
+    path: "{{category}}/_category_"
+    extension: "json"
+    format: "json"
+    fields:
+      - {
+          label: "Category Path (카테고리 경로)",
+          name: "category",
+          widget: "string",
+          hint: "카테고리 폴더 경로 (예: 'guide', 'api', 'guide/advanced')"
+        }
+      - { label: "Label (표시 이름)", name: "label", widget: "string", hint: "사이드바 표시 이름" }
+      - { label: "Position (순서)", name: "position", widget: "number", required: false }
+      - {
+          label: "Link (링크)",
+          name: "link",
+          widget: "object",
+          required: false,
+          hint: "선택사항: 카테고리를 클릭 가능하게 만들기",
+          fields:
+            [
+              {
+                label: "Type",
+                name: "type",
+                widget: "select",
+                options: ["generated-index", "doc"],
+                default: "generated-index"
+              },
+              { label: "Title (제목)", name: "title", widget: "string", required: false },
+              { label: "Description (설명)", name: "description", widget: "text", required: false },
+              { label: "Slug", name: "slug", widget: "string", required: false }
+            ]
+        }
+      - { label: "Collapsed (접힘)", name: "collapsed", widget: "boolean", default: true, required: false }
