@@ -49,10 +49,9 @@ To begin using Ratel, create your account. Ratel offers two ways to sign up: Ema
 
 ### (2) Create a Team
 
-1. Navigate to the **Teams** section.
-2. Click **Create Team**.
-3. Enter a team name and description.
-4. Invite colleagues by selecting **Invite Members** and entering their email addresses.
+1. Click **Create a Team**.
+2. Enter a Team display name, Team ID and description.
+3. Invite colleagues by selecting **Manage Group - Invite Members** and entering their email addresses.
 
 *(Screenshot: Teams dashboard with “Create Team” button)*
 
