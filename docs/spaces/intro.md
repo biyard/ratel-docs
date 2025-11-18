@@ -68,10 +68,14 @@ To begin using Ratel, create your account. Ratel offers two ways to sign up: Ema
 1. Select the **Deliberation** type to create a Space with your post.
 2. **Add an Overview**: Provide context, goals, and participation guidelines.
 3. **Upload Files**: Attach supporting documents and reference materials.
-4. **Create Pre-Survey**: Build a survey to collect participant background and baseline opinions.
-5. **Enable Anonymous Participation** (optional): Allow participants to hide their display names.
-6. **Set Space to Private**: Restrict access to invited participants only.
-7. *(Screenshot: Spaces settings with Overview, Files, Pre-Survey, Anonymous and Privacy options)*
+4. **Create Pre-Poll Survey**: Build a survey to collect participant background and baseline opinions.
+5. Board
+6. Members
+7. Panels
+8. **Enable Anonymous Participation** (optional): Allow participants to hide their display names.
+9. Enable Change Visivility (optional) : 
+10. **Set Space to Private**: Restrict access to invited participants only.
+11. *(Screenshot: Spaces settings with Overview, Files, Pre-Survey, Anonymous and Privacy options)*
 
 *(Screenshot: Spaces section with “Create Space” button)*
 
