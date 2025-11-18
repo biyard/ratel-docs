@@ -36,6 +36,10 @@ To begin using Ratel, create your account. Ratel offers two ways to sign up: Ema
 
 *(Screenshot: Email Sign Up form with fields for email, verification code, password, display name, username)*
 
+![](image-11-18-25-at-2.25 pm.png)
+
+![](image-11-18-25-at-2.26 pm.png)
+
 **Google Sign Up**
 
 1. On the Sign Up page, click **Continue with Google**.
@@ -81,7 +85,7 @@ To begin using Ratel, create your account. Ratel offers two ways to sign up: Ema
 
 *(Screenshot: Invite Link generation screen)*
 
-## 2. Participant - Join Deliberation Space 
+## 2. Participant - Join Deliberation Space
 
 ### (1) Click Invite Link
 
