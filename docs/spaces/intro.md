@@ -69,21 +69,17 @@ To begin using Ratel, create your account. Ratel offers two ways to sign up: Ema
 2. **Add an Overview**: Provide context, goals, and participation guidelines.
 3. **Upload Files**: Attach supporting documents and reference materials.
 4. **Create Pre-Poll Survey**: Build a survey to collect participant background and baseline opinions.
-5. Board
-6. Members
-7. Panels
+5. **Board** : Create a dedicated board for discussion and posts.
+6. **Members** : Invite members to your Space.
+7. **Panels** : Set up the panels who will participate in the Space.
 8. **Enable Anonymous Participation** (optional): Allow participants to hide their display names.
-9. Enable Change Visivility (optional) : 
+9. **Enable Change Visivility** (optional) : Allow the visibility status of the post to be changed.
 10. **Set Space to Private**: Restrict access to invited participants only.
 11. *(Screenshot: Spaces settings with Overview, Files, Pre-Survey, Anonymous and Privacy options)*
 
-*(Screenshot: Spaces section with “Create Space” button)*
+### (5) Sending Invitation Links
 
-### (5) Share Invite Link
-
-1. Go to **Invitations** within your Space.
-2. Click **Generate Invite Link**.
-3. Share the link via email or chat.
+When the creator publishes the Space, an invitation email is automatically sent to the invited members.
 
 **Note:** Once the Space is started, new participants cannot join.
 
@@ -98,22 +94,13 @@ To begin using Ratel, create your account. Ratel offers two ways to sign up: Ema
 
 *(Screenshot: Invite link landing page)*
 
-### (2) Identity Verification / Attribute Addition
+### (2) Identity Verification
 
-1. Complete required fields such as age, gender, and school.
-2. If anonymous participation is allowed, choose to hide your display name.
+1. **Verifiable Credential**: Perform identity verification by entering the authentication code.
 
-*(Screenshot: Identity attributes form)*
+### (3) Complete Pre-Poll Survey
 
-### (3) Code Insertion (School Verification)
-
-1. Enter the optional verification code provided by your institution.
-
-*(Screenshot: Optional school verification code input)*
-
-### (4) Complete Pre-Survey
-
-1. Take the pre-survey after completing your attributes.
+1. Take the Pre-Poll survey after completing your attributes.
 2. Submit your responses.
 
 *(Screenshot: Pre-survey interface)*
@@ -121,7 +108,8 @@ To begin using Ratel, create your account. Ratel offers two ways to sign up: Ema
 ## 3. Creator - Start the Space
 
 1. Click **Start Space**.
-2. Confirm that participant enrollment will close.
+
+**Note:** Once the Space is started, new participants cannot join.
 
 *(Screenshot: Start Space confirmation modal)*
 
