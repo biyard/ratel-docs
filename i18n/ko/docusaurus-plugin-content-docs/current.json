@@ -1,0 +1,270 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Getting Started": {
+    "message": "시작하기",
+    "description": "The label for category 'Getting Started' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Getting Started.link.generated-index.title": {
+    "message": "Ratel 시작하기",
+    "description": "The generated-index page title for category 'Getting Started' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Getting Started.link.generated-index.description": {
+    "message": "Ratel 플랫폼을 시작하는 데 필요한 모든 것 - 계정 생성부터 인터페이스 이해까지.",
+    "description": "The generated-index page description for category 'Getting Started' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.User Guide": {
+    "message": "사용자 가이드",
+    "description": "The label for category 'User Guide' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.User Guide.link.generated-index.title": {
+    "message": "사용자 가이드",
+    "description": "The generated-index page title for category 'User Guide' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.User Guide.link.generated-index.description": {
+    "message": "Ratel 플랫폼의 모든 기능 사용을 위한 완전한 가이드.",
+    "description": "The generated-index page description for category 'User Guide' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Account Management": {
+    "message": "계정 관리",
+    "description": "The label for category 'Account Management' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Account Management.link.generated-index.title": {
+    "message": "계정 관리",
+    "description": "The generated-index page title for category 'Account Management' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Account Management.link.generated-index.description": {
+    "message": "Ratel 계정, 프로필, 보안 및 환경 설정을 관리합니다.",
+    "description": "The generated-index page description for category 'Account Management' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Posts & Threads": {
+    "message": "게시물 및 스레드",
+    "description": "The label for category 'Posts & Threads' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Posts & Threads.link.generated-index.title": {
+    "message": "게시물 및 스레드",
+    "description": "The generated-index page title for category 'Posts & Threads' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Posts & Threads.link.generated-index.description": {
+    "message": "매력적인 게시물과 스레드를 만들고 Ratel에서 콘텐츠를 관리합니다.",
+    "description": "The generated-index page description for category 'Posts & Threads' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Social Features": {
+    "message": "소셜 기능",
+    "description": "The label for category 'Social Features' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Social Features.link.generated-index.title": {
+    "message": "소셜 기능",
+    "description": "The generated-index page title for category 'Social Features' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Social Features.link.generated-index.description": {
+    "message": "다른 사용자와 연결하고, 네트워크를 구축하고, 콘텐츠를 탐색합니다.",
+    "description": "The generated-index page description for category 'Social Features' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Teams": {
+    "message": "팀",
+    "description": "The label for category 'Teams' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Teams.link.generated-index.title": {
+    "message": "팀",
+    "description": "The generated-index page title for category 'Teams' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Teams.link.generated-index.description": {
+    "message": "협업 거버넌스 및 옹호를 위한 팀을 만들고 관리합니다.",
+    "description": "The generated-index page description for category 'Teams' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.spaces-guide": {
+    "message": "Space 크리에이터를 위한",
+    "description": "The label for category 'For Space Creators' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.spaces-guide.link.generated-index.title": {
+    "message": "Space 크리에이터를 위한",
+    "description": "The generated-index page title for category 'For Space Creators' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.spaces-guide.link.generated-index.description": {
+    "message": "Ratel 커뮤니티 기능의 핵심인 Space를 만들고, 참여하고, 관리하는 방법을 배웁니다.",
+    "description": "The generated-index page description for category 'For Space Creators' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Governance": {
+    "message": "거버넌스",
+    "description": "The label for category 'Governance' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Governance.link.generated-index.title": {
+    "message": "거버넌스",
+    "description": "The generated-index page title for category 'Governance' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Governance.link.generated-index.description": {
+    "message": "Ratel의 DAO 거버넌스에 참여하고, 제안서를 작성하고, 암호화폐 정책에 영향을 미칩니다.",
+    "description": "The generated-index page description for category 'Governance' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.$RATEL Token": {
+    "message": "$RATEL 토큰",
+    "description": "The label for category '$RATEL Token' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.$RATEL Token.link.generated-index.title": {
+    "message": "$RATEL 토큰",
+    "description": "The generated-index page title for category '$RATEL Token' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.$RATEL Token.link.generated-index.description": {
+    "message": "$RATEL 거버넌스 토큰, 그 유틸리티 및 획득 방법에 대해 알아보세요.",
+    "description": "The generated-index page description for category '$RATEL Token' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Oracle": {
+    "message": "Oracle",
+    "description": "The label for category 'Oracle' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Oracle.link.generated-index.title": {
+    "message": "Oracle",
+    "description": "The generated-index page title for category 'Oracle' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Oracle.link.generated-index.description": {
+    "message": "투표를 사용하여 DID 속성을 검증하는 다자간 검증 시스템. Oracle은 커뮤니티 기반 인증을 통해 정부 KYC를 넘어 사용자 신원 속성의 확장을 가능하게 합니다.",
+    "description": "The generated-index page description for category 'Oracle' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Membership & Subscriptions": {
+    "message": "멤버십 및 구독",
+    "description": "The label for category 'Membership & Subscriptions' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Membership & Subscriptions.link.generated-index.title": {
+    "message": "멤버십 및 구독",
+    "description": "The generated-index page title for category 'Membership & Subscriptions' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Membership & Subscriptions.link.generated-index.description": {
+    "message": "멤버십 등급, 구독 옵션 및 독점 혜택을 탐색합니다.",
+    "description": "The generated-index page description for category 'Membership & Subscriptions' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Airdrops & Rewards": {
+    "message": "에어드랍 및 보상",
+    "description": "The label for category 'Airdrops & Rewards' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Airdrops & Rewards.link.generated-index.title": {
+    "message": "에어드랍 및 보상",
+    "description": "The generated-index page title for category 'Airdrops & Rewards' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Airdrops & Rewards.link.generated-index.description": {
+    "message": "Ratel의 에어드랍 시스템, 리딤 코드 및 보상 획득 방법에 대해 알아보세요.",
+    "description": "The generated-index page description for category 'Airdrops & Rewards' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Airdrop System": {
+    "message": "에어드랍 시스템",
+    "description": "The label for category 'Airdrop System' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Airdrop System.link.generated-index.title": {
+    "message": "에어드랍 시스템",
+    "description": "The generated-index page title for category 'Airdrop System' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Airdrop System.link.generated-index.description": {
+    "message": "Ratel의 에어드랍 프로그램에 대한 모든 것 - 자격, 청구 및 보상.",
+    "description": "The generated-index page description for category 'Airdrop System' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Redeem Codes": {
+    "message": "리딤 코드",
+    "description": "The label for category 'Redeem Codes' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Redeem Codes.link.generated-index.title": {
+    "message": "리딤 코드",
+    "description": "The generated-index page title for category 'Redeem Codes' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Redeem Codes.link.generated-index.description": {
+    "message": "리딤 코드를 사용하여 특별 보상 및 혜택을 받으세요.",
+    "description": "The generated-index page description for category 'Redeem Codes' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Advanced Features": {
+    "message": "고급 기능",
+    "description": "The label for category 'Advanced Features' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Advanced Features.link.generated-index.title": {
+    "message": "고급 기능",
+    "description": "The generated-index page title for category 'Advanced Features' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Advanced Features.link.generated-index.description": {
+    "message": "DID, API 통합 및 텔레그램 봇을 포함한 고급 기능을 탐색하세요.",
+    "description": "The generated-index page description for category 'Advanced Features' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.API Integration": {
+    "message": "API 통합",
+    "description": "The label for category 'API Integration' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.API Integration.link.generated-index.title": {
+    "message": "API 통합",
+    "description": "The generated-index page title for category 'API Integration' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.API Integration.link.generated-index.description": {
+    "message": "사용자 지정 애플리케이션 및 워크플로를 위해 Ratel의 API와 통합합니다.",
+    "description": "The generated-index page description for category 'API Integration' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.creators-resources": {
+    "message": "Space 크리에이터를 위한",
+    "description": "The label for category 'For Space Creators' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.creators-resources.link.generated-index.title": {
+    "message": "Space 크리에이터를 위한",
+    "description": "The generated-index page title for category 'For Space Creators' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.creators-resources.link.generated-index.description": {
+    "message": "Ratel에서 커뮤니티를 구축하고 성장시키기 위한 리소스.",
+    "description": "The generated-index page description for category 'For Space Creators' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Security & Privacy": {
+    "message": "보안 및 개인정보",
+    "description": "The label for category 'Security & Privacy' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Security & Privacy.link.generated-index.title": {
+    "message": "보안 및 개인정보",
+    "description": "The generated-index page title for category 'Security & Privacy' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Security & Privacy.link.generated-index.description": {
+    "message": "Ratel의 보안 조치 및 개인정보 보호에 대해 알아보세요.",
+    "description": "The generated-index page description for category 'Security & Privacy' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.FAQs & Troubleshooting": {
+    "message": "FAQ 및 문제 해결",
+    "description": "The label for category 'FAQs & Troubleshooting' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.FAQs & Troubleshooting.link.generated-index.title": {
+    "message": "FAQ 및 문제 해결",
+    "description": "The generated-index page title for category 'FAQs & Troubleshooting' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.FAQs & Troubleshooting.link.generated-index.description": {
+    "message": "일반적인 질문에 대한 답변과 기술 문제에 대한 해결책을 찾으세요.",
+    "description": "The generated-index page description for category 'FAQs & Troubleshooting' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Legal": {
+    "message": "법적 정보",
+    "description": "The label for category 'Legal' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Legal.link.generated-index.title": {
+    "message": "법적 정보",
+    "description": "The generated-index page title for category 'Legal' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Legal.link.generated-index.description": {
+    "message": "서비스 약관, 커뮤니티 가이드라인 및 법적 정책.",
+    "description": "The generated-index page description for category 'Legal' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Roadmap": {
+    "message": "로드맵",
+    "description": "The label for category 'Roadmap' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Roadmap.link.generated-index.title": {
+    "message": "로드맵",
+    "description": "The generated-index page title for category 'Roadmap' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Roadmap.link.generated-index.description": {
+    "message": "Ratel의 개발 로드맵 및 미래 계획.",
+    "description": "The generated-index page description for category 'Roadmap' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.About": {
+    "message": "About",
+    "description": "The label for category 'About' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.About.link.generated-index.title": {
+    "message": "Ratel 소개",
+    "description": "The generated-index page title for category 'About' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.About.link.generated-index.description": {
+    "message": "Ratel 팀, 우리의 사명 및 연락 방법에 대해 알아보세요.",
+    "description": "The generated-index page description for category 'About' in sidebar 'tutorialSidebar'"
+  }
+}

@@ -1,10 +1,10 @@
 {
-  "label": "스페이스",
+  "label": "스페이스 생성자용",
   "position": 4,
+  "key": "spaces-guide",
   "link": {
     "type": "generated-index",
-    "title": "스페이스",
-    "description": "Ratel 스페이스에 대해 알아보기"
-  },
-  "collapsed": false
+    "title": "스페이스 생성자용",
+    "description": "Ratel 커뮤니티 기능의 핵심인 스페이스를 생성, 가입 및 관리하는 방법을 배우세요."
+  }
 }

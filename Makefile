@@ -37,8 +37,8 @@ BUILD_ENVS ?= ENV=$(ENV) \
 node_modules:
 	npm i
 
-run: node_modules
-	npm start
+run: node_modules build
+	npm run serve
 
 .PHONY: build
 build: node_modules
@@ -48,7 +48,7 @@ sync: build
 	aws s3 sync ./build s3://$(WEB_BUCKET)
 	aws cloudfront create-invalidation --distribution-id $(WEB_CDN_ID) --paths "/*"
 
-deploy: build
+deploy:
 	cd cdk && $(BUILD_ENVS) npm i
 	cd cdk && $(BUILD_ENVS) npm run build
 	cd cdk && $(BUILD_ENVS) cdk synth

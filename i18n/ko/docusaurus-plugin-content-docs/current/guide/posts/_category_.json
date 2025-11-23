@@ -1,0 +1,9 @@
+{
+  "label": "게시물 및 스레드",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "title": "게시물 및 스레드",
+    "description": "Ratel에서 매력적인 게시물, 스레드를 작성하고 콘텐츠를 관리하세요."
+  }
+}

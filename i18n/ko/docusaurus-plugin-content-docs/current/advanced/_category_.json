@@ -1,0 +1,9 @@
+{
+  "label": "고급 기능",
+  "position": 7,
+  "link": {
+    "type": "generated-index",
+    "title": "고급 기능",
+    "description": "DID, API 통합 및 텔레그램 봇을 포함한 고급 기능을 탐색하세요."
+  }
+}
