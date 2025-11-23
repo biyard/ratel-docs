@@ -84,7 +84,7 @@
     "description": "The generated-index page title for category 'For Space Creators' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.spaces-guide.link.generated-index.description": {
-    "message": "Ratel 커뮤니티 기능의 핵심인 Space를 만들고, 참여하고, 관리하는 방법을 배웁니다.",
+    "message": "Ratel 커뮤니티 기능의 핵심인 Space를 만들고, 참여하고, 관리하는 방법을 배웁니다. 커뮤니티 구축, 콘텐츠 전략, 중재 및 수익 창출을 위한 가이드를 포함합니다.",
     "description": "The generated-index page description for category 'For Space Creators' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.Governance": {
@@ -194,18 +194,6 @@
   "sidebar.tutorialSidebar.category.API Integration.link.generated-index.description": {
     "message": "사용자 지정 애플리케이션 및 워크플로를 위해 Ratel의 API와 통합합니다.",
     "description": "The generated-index page description for category 'API Integration' in sidebar 'tutorialSidebar'"
-  },
-  "sidebar.tutorialSidebar.category.creators-resources": {
-    "message": "Space 크리에이터를 위한",
-    "description": "The label for category 'For Space Creators' in sidebar 'tutorialSidebar'"
-  },
-  "sidebar.tutorialSidebar.category.creators-resources.link.generated-index.title": {
-    "message": "Space 크리에이터를 위한",
-    "description": "The generated-index page title for category 'For Space Creators' in sidebar 'tutorialSidebar'"
-  },
-  "sidebar.tutorialSidebar.category.creators-resources.link.generated-index.description": {
-    "message": "Ratel에서 커뮤니티를 구축하고 성장시키기 위한 리소스.",
-    "description": "The generated-index page description for category 'For Space Creators' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.Security & Privacy": {
     "message": "보안 및 개인정보",

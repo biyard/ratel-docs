@@ -1,10 +1,10 @@
 {
-  "label": "스페이스 생성자용",
+  "label": "Space 크리에이터를 위한",
   "position": 4,
   "key": "spaces-guide",
   "link": {
     "type": "generated-index",
-    "title": "스페이스 생성자용",
-    "description": "Ratel 커뮤니티 기능의 핵심인 스페이스를 생성, 가입 및 관리하는 방법을 배우세요."
+    "title": "Space 크리에이터를 위한",
+    "description": "Ratel 커뮤니티 기능의 핵심인 Space를 만들고, 참여하고, 관리하는 방법을 배웁니다. 커뮤니티 구축, 콘텐츠 전략, 중재 및 수익 창출을 위한 가이드를 포함합니다."
   }
 }

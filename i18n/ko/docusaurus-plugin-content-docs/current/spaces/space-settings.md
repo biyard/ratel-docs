@@ -78,5 +78,5 @@ sidebar_position: 5
 
 ## 다음 단계
 
-- [커뮤니티 구축](/creators/community-building)
-- [중재 및 관리](/creators/moderation)
+- [커뮤니티 구축](/spaces/community-building)
+- [중재 및 관리](/spaces/moderation)

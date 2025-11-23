@@ -82,4 +82,4 @@ sidebar_position: 4
 ## 다음 단계
 
 - [스페이스 설정 및 권한](./space-settings.md)
-- [스페이스 크리에이터 가이드](/creators/community-building)
+- [스페이스 크리에이터 가이드](/spaces/community-building)

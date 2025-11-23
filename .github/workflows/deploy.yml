@@ -28,5 +28,5 @@ jobs:
           GITHUB_CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
           DOMAIN: docs.ratel.foundation
         run: |
-          make deploy
+          make sync
 
