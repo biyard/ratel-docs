@@ -112,7 +112,7 @@ export class DocsStack extends cdk.Stack {
       // OAuth Lambda + API Gateway
       const oauthFn = new NodejsFunction(this, "GithubOAuthFn", {
         runtime: lambda.Runtime.NODEJS_20_X,
-        entry: "../lambda/github-oauth.ts",
+        entry: "./lambda/github-oauth.ts",
         handler: "handler",
         environment: {
           GITHUB_CLIENT_ID,
@@ -180,12 +180,12 @@ export class DocsStack extends cdk.Stack {
     });
 
     // Deploy built site to S3
-    new s3deploy.BucketDeployment(this, `RatelDocsBucketDeployment-${ENV}`, {
-      destinationBucket: bucket,
-      distribution: prodDist,
-      distributionPaths: ["/*"],
-      sources: [s3deploy.Source.asset("../build")],
-    });
+    // new s3deploy.BucketDeployment(this, `RatelDocsBucketDeployment-${ENV}`, {
+    //   destinationBucket: bucket,
+    //   distribution: prodDist,
+    //   distributionPaths: ["/*"],
+    //   sources: [s3deploy.Source.asset("../build")],
+    // });
 
     new cdk.CfnOutput(this, "ProdBucketName", { value: bucket.bucketName });
     new cdk.CfnOutput(this, "ProdDistributionId", {

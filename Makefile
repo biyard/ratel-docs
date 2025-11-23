@@ -19,9 +19,17 @@ BUILD_ENVS ?= ENV=$(ENV) \
 								GITHUB_CLIENT_SECRET=$(GITHUB_CLIENT_SECRET) \
 								ALLOWED_REDIRECT_ORIGIN=$(ALLOWED_REDIRECT_ORIGIN)
 
-deploy:
+node_modules:
 	npm i
+
+run: node_modules
+	npm start
+
+.PHONY: build
+build: node_modules
 	npm run build
+
+deploy: build
 	cd cdk && $(BUILD_ENVS) npm i
 	cd cdk && $(BUILD_ENVS) npm run build
 	cd cdk && $(BUILD_ENVS) cdk synth
