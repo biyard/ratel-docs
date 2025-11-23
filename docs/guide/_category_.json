@@ -1,0 +1,10 @@
+{
+  "label": "User Guide",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "title": "User Guide",
+    "description": "Complete guide to using all features of the Ratel platform."
+  },
+  "collapsed": false
+}

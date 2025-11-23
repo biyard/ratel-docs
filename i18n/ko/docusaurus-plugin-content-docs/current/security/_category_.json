@@ -1,0 +1,9 @@
+{
+  "label": "보안 및 개인정보",
+  "position": 10,
+  "link": {
+    "type": "generated-index",
+    "title": "보안 및 개인정보",
+    "description": "Ratel의 보안 조치 및 개인정보 보호에 대해 알아보세요."
+  }
+}

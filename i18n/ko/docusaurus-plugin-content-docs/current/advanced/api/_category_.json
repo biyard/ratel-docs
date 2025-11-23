@@ -1,0 +1,9 @@
+{
+  "label": "API 통합",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "title": "API 통합",
+    "description": "사용자 정의 애플리케이션 및 워크플로를 위해 Ratel의 API와 통합하세요."
+  }
+}

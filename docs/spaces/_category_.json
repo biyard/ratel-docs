@@ -1,0 +1,10 @@
+{
+  "label": "For Space Creators",
+  "position": 4,
+  "key": "spaces-guide",
+  "link": {
+    "type": "generated-index",
+    "title": "For Space Creators",
+    "description": "Learn how to create, join, and manage Spaces - the core of Ratel's community features."
+  }
+}

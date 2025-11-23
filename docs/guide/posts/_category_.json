@@ -1,0 +1,9 @@
+{
+  "label": "Posts & Threads",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "title": "Posts & Threads",
+    "description": "Create engaging posts, threads, and manage your content on Ratel."
+  }
+}

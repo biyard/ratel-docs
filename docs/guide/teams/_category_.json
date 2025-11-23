@@ -1,0 +1,9 @@
+{
+  "label": "Teams",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "title": "Teams",
+    "description": "Create and manage teams for collaborative governance and advocacy."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "label": "계정 관리",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "title": "계정 관리",
+    "description": "Ratel 계정, 프로필, 보안 및 설정을 관리하세요."
+  }
+}

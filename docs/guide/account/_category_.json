@@ -1,0 +1,9 @@
+{
+  "label": "Account Management",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "title": "Account Management",
+    "description": "Manage your Ratel account, profile, security, and preferences."
+  }
+}

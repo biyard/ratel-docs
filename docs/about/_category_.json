@@ -1,0 +1,9 @@
+{
+  "label": "About",
+  "position": 14,
+  "link": {
+    "type": "generated-index",
+    "title": "About Ratel",
+    "description": "Learn about the Ratel team, our mission, and how to get in touch."
+  }
+}

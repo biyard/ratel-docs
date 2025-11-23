@@ -9,3 +9,6 @@ cdk/cdk.out
 /cdk/cdk.json
 .docusaurus
 *.log
+/.playwright-mcp/
+/.pdf-view-restore
+*.pdf

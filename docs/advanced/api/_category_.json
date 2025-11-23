@@ -1,0 +1,9 @@
+{
+  "label": "API Integration",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "title": "API Integration",
+    "description": "Integrate with Ratel's API for custom applications and workflows."
+  }
+}

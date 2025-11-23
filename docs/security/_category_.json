@@ -1,0 +1,9 @@
+{
+  "label": "Security & Privacy",
+  "position": 10,
+  "link": {
+    "type": "generated-index",
+    "title": "Security & Privacy",
+    "description": "Learn about Ratel's security measures and privacy protections."
+  }
+}

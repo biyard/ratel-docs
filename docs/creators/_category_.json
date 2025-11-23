@@ -1,0 +1,10 @@
+{
+  "label": "For Space Creators",
+  "position": 8,
+  "key": "creators-resources",
+  "link": {
+    "type": "generated-index",
+    "title": "For Space Creators",
+    "description": "Resources for building and growing your community on Ratel."
+  }
+}

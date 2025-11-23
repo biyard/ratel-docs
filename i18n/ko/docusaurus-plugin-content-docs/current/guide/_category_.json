@@ -1,0 +1,10 @@
+{
+  "label": "사용자 가이드",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "title": "사용자 가이드",
+    "description": "Ratel 플랫폼의 모든 기능 사용을 위한 완전한 가이드."
+  },
+  "collapsed": false
+}

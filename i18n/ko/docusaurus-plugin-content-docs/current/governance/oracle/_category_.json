@@ -1,0 +1,9 @@
+{
+  "label": "오라클",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "title": "오라클",
+    "description": "투표를 통해 DID 속성을 검증하는 다자간 인증 시스템입니다. 오라클은 커뮤니티 기반 인증을 통해 정부 KYC를 넘어 사용자 신원 속성을 확장할 수 있게 합니다."
+  }
+}

@@ -9,7 +9,22 @@ const config: Config = {
   organizationName: "biyard",
   projectName: "ratel-docs",
   onBrokenLinks: "warn",
-  i18n: { defaultLocale: "en", locales: ["en", "ko"] },
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "ko"],
+    localeConfigs: {
+      en: {
+        label: "English",
+        direction: "ltr",
+        htmlLang: "en-US",
+      },
+      ko: {
+        label: "한국어",
+        direction: "ltr",
+        htmlLang: "ko-KR",
+      },
+    },
+  },
   presets: [
     [
       "classic",
@@ -30,6 +45,10 @@ const config: Config = {
     navbar: {
       title: "Ratel Docs",
       items: [
+        {
+          type: "localeDropdown",
+          position: "right",
+        },
         {
           type: "html",
           position: "right",
